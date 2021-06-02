@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -13,8 +14,16 @@
 
     <p>company: {{ company }}</p>
     <form action="{{ url_for('login') }}" method="post">
-        <input type="hidden" name="month" value="june">
-        <input type="submit" value="Send">
+        <label for="user">user:</label><br>
+        <input type="text" name="user" id="user">
+        <br><br>
+
+        <label for="passwd">password:</label><br>
+        <input type="password" name="passwd" id="passwd">
+        <br><br>
+        <div class="g-recaptcha" data-sitekey="6LeAdQcbAAAAAFhWhLVOYQz2RSawVM1brJY9j7ql"></div>
+        <br><br>
+        <input type="submit" name="mysubmit" value="Send">
     </form>
 </body>
 
