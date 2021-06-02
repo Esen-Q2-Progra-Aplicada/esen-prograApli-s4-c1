@@ -11,8 +11,10 @@
 <body>
     <h1>login</h1>
 
+    <p>company: {{ company }}</p>
     <form action="{{ url_for('login') }}" method="post">
-
+        <input type="hidden" name="month" value="june">
+        <input type="submit" value="Send">
     </form>
 </body>
 

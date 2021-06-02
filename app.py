@@ -11,9 +11,11 @@ def home():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        return render_template("login.html")
+        company = "balcorp"
+        return render_template("login.html", company=company)
     elif request.method == "POST":
-        return "posted"
+        month = request.form["month"]
+        return f"posted month:{month}"
 
 
 if __name__ == "__main__":
